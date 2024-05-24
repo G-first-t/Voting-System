@@ -9,6 +9,12 @@ class BookstoreArea(admin.AdminSite):
     
 book_site=BookstoreArea(name="books")
 
-book_site.register(Book)
 
 
+
+class BooksAppearance(admin.ModelAdmin):
+    pass
+    fields=[("title","author"),"description","pages"]
+
+    
+book_site.register(Book,BooksAppearance)
